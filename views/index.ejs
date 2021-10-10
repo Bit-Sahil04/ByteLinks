@@ -1,0 +1,23 @@
+<%- include('./includes/meta')%>
+
+<body>
+  <%-include('./includes/nav')%>
+  <div id="ff" class="hidden"></div>
+  <%-include('./includes/logo')%>
+  <form action="/submit" method="POST">
+    <div class="form-style-7">
+      <ul>
+        <li>
+          <label for="userUrl"> URL </label>
+          <input placeholder="https://www.google.com" name="userUrl" type="url" value="" required />
+        </li>
+        <li>
+          <input type="submit" value="Shorten!"> </input>
+        </li>
+      </ul>
+    </div>
+  </form>
+  <%- include('./includes/urlTable', {urls}) %>
+</body>
+
+</html>

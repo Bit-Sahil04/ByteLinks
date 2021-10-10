@@ -1,0 +1,25 @@
+<%- include('./includes/meta') %>
+
+<body>
+  <%- include('./includes/nav') %>
+  <%- include('./includes/logo') %>
+
+
+  <form action="/signon" method="POST">
+    <div class="form-style-7">
+      <ul>
+        <li>
+          <label for="username"> Username </label>
+          <input placeholder="github.com/bit-sahil04" name="username" type="text" value="" required />
+        </li>
+        <li>
+          <label for="password"> Password </label>
+          <input placeholder="h1r3_m3" name="password" type="password" value="" required />
+        </li>
+        <li>
+          <input type="submit" value="Let Me In!" name="actionType"></input>
+          <input type="submit" value="I'm New" name="actionType" id="green-input-button"> </input>
+        </li>
+      </ul>
+    </div>
+  </form>

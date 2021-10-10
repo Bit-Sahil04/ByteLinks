@@ -1,0 +1,275 @@
+html{
+  scroll-behavior: smooth;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  
+}
+
+body {
+  font-family: "Oswald" , "lato", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: auto;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+.logo h1{
+  font-size: 5em;
+  margin: 5rem;
+  color: rgb(71, 66, 67);
+}
+
+/* h1 {
+  background-color: transparent;
+} */
+.logo .red-block {
+  color: #dd4b46ff ;
+  padding-right: -5px;
+}
+/* ------------------------- NAVBAR ----------------------------- */
+/* Taken from https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
+
+header{
+  width: 99vw; /*  setting it to != 99 causes it to overflow? */
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%; /* Full width */
+  display: flex;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #dd4b46ff ;
+  color: #ddd;
+}
+
+#logout{
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+/* ------------------------- FORM ----------------------------- */
+form{
+/*   outline: auto; */
+/*   margin: 15% auto; */
+/*   padding: 15%; */
+
+  width: 100%;
+/*   margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; */
+}
+
+/* FORM "style-7", taken from:
+https://www.sanwebe.com/2014/08/css-html-forms-designs
+  */
+
+.form-style-7{
+	max-width:400px;
+	margin:50px auto;
+	background:#fff;
+	border-radius:2px;
+	padding:20px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 ul{
+	list-style:none;
+	padding:0;
+	margin:0;	
+}
+.form-style-7 li{
+	display: block;
+	padding: 9px;
+	border:1px solid #DDDDDD;
+	margin-bottom: 30px;
+	border-radius: 3px;
+}
+.form-style-7 li:last-child{
+	border:none;
+	margin-bottom: 0px;
+	text-align: center;
+}
+.form-style-7 li > label{
+	display: block;
+	float: left;
+	margin-top: -20px;
+	background: #FFFFFF;
+	height: 15px;
+	padding: 2px 5px 2px 5px;
+	color: #B9B9B9;
+	font-size: 14px;
+	overflow: hidden;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.form-style-7 input[type="text"],
+.form-style-7 input[type="url"],
+.form-style-7 input[type="password"],
+.form-style-7 textarea,
+.form-style-7 select 
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	width: 100%;
+	display: block;
+	outline: none;
+	border: none;
+	height: 25px;
+	line-height: 25px;
+	font-size: 16px;
+	padding: 0;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 li > span{
+	background: #F3F3F3;
+	display: block;
+	padding: 3px;
+	margin: 0 -9px -9px -9px;
+	text-align: center;
+	color: #C0C0C0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+.form-style-7 input[type="submit"],
+.form-style-7 input[type="button"]{
+	background: #dd4b46ff;
+	border: none;
+	padding: 10px 20px 10px 20px;
+	/* border-bottom: 3px solid rgb(255, 0, 0); */
+	border-radius: 3px;
+	color: #FFF;
+  cursor: pointer;
+}
+.form-style-7 input[type="submit"]:hover,
+.form-style-7 input[type="button"]:hover{
+	background: rgb(255, 30, 30);
+	color:#fff;
+}
+
+#green-input-button{
+  background-color: #33b864
+}
+#green-input-button:hover{
+  background-color: #17e964
+}
+
+
+/*------------------ URL Table ----------------*/
+
+.my-table {
+  width: 90vw;
+  min-height: 50%;
+  margin: auto;
+  list-style-type: none;
+}
+.row {
+  border: 0px 1px 1px 1px solid black;
+  border-radius: 2px;
+  padding: 5px;
+  width: 100%;
+  min-height: 30%;
+
+  display: flex;
+  margin: 0% 0% 0% 0%;
+
+  font-size: 1.2em;
+}
+/* 
+.my-table li:nth-child(even) {
+  background-color: #dfdddd;
+} */
+
+.col-0:hover {
+  color: rgb(255, 60, 50);
+}
+
+.row:hover {
+  box-shadow: 2px 2px 3px gray;
+  background-color: rgb(182, 181, 181);
+}
+.col a {
+  color: black;
+  text-decoration-line: none;
+  /* background-color: transparent; */
+}
+.col {
+  /*   outline: auto; */
+  color: black;
+  margin: auto;
+  /*   padding: auto; */
+  /* border: 0px 1px 0px 0px solid blue; */
+  text-align: center;
+  /* background-color: transparent; */
+}
+.table-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #dd4b46ff
+}
+
+.col-0 {
+  width: 3%;
+  height: 50%;
+  /* outline: auto; */
+  text-decoration-line: none;
+  /*   min-width: 2%; */
+}
+.col-1 {
+  width: 50%;
+  /* outline: auto; */
+  /*   min-width: 25%; */
+}
+.col-2 {
+  width: 30%;
+  /* outline: auto; */
+  /*   min-width: 2%; */
+}
+.col-3 {
+  width: 10%;
+  /* outline: auto; */
+  /*   min-width: 2%; */
+}
+.col-4 {
+  width: 7%;
+  /* outline: auto; */
+  /*   min-width: 2%; */
+}
+
+#table-header {
+  background-color: white;
+  color: #dd4b46ff ;
+
+}
+#table-header:hover {
+  box-shadow: none;
+}
+
+/*  ---------- MISC -------------- */
+
+.grayed {
+  color: gray;
+}

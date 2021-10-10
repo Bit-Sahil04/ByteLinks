@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../public/css/index.css" />
+    <title>Byte-Url URL Shortener</title>
+  </head>
+  <body>
+    <header>
+        <h1>Byte URL</h1>
+    </header>
+    <form>
+    <div class="form-control" action="/submit-link" method="POST">
+        <label for="user-url"> URL </label>
+        <input
+          placeholder="https://www.google.com"
+          name="user-url"
+          type="text"
+          value=""
+        />
+    </div>
+</form>
+    <div class="url-table">
+      <table>
+        <caption>
+          Existing URLs
+        </caption>
+        <tr>
+          <th>Delete</th>
+          <th>Original URL</th>
+          <th>Shortend URL</th>
+          <th>Created At</th>
+          <th>Current Status</th>
+        </tr>
+
+        <tr class=grayed>
+          <td>❌ </td>
+          <td>Original URL</td>
+          <td>Shortend URL</td>
+          <td>Created At</td>
+          <td>Current Status</td>
+        </trq>
+        <tr>
+          <td>❌ </td>
+          <td>Original URL</td>
+          <td>Shortend URL</td>
+          <td>Created At</td>
+          <td>Current Status</td>
+        </tr>
+        <tr>
+          <td>❌</td>
+          <td>Original URL</td>
+          <td>Shortend URL</td>
+          <td>Created At</td>
+          <td>Current Status</td>
+        </tr>
+        <tr>
+          <td>❌</td>
+          <td>Original URL</td>
+          <td>Shortend URL</td>
+          <td>Created At</td>
+          <td>Current Status</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

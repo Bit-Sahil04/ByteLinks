@@ -1,0 +1,28 @@
+<div <% if (urls) { %> <div class="my-table">
+    <!-- <h2>
+      Existing URLS
+    </h2> -->
+    <ul class="my-table">
+      <li class="table-header">
+        <div class="row" >
+          <span class="col col-3 table-title" >Date</span>
+          <span class="col col-1 table-title" >Original URL</span>
+          <span class="col col-2 table-title" >Shortened URL</span>
+          <span class="col col-0 table-title" > </span>
+        </div>
+      </li>
+
+      <% for (url of urls) { %>
+        <li>
+          <div class="row">
+            <span class="col col-3"><%= url.date.toString().split("2021")[0]  %> </span>
+            <span class="col col-1"> <a href="<%=url.url%>"> <%= url.url.substring(0, 40) + ( url.url.length > 39 ? "...":"") %> </a></span>
+        <span class="col col-2"> <a href="<%=url.url%>"> <%= url.shortUrl %> </a></span>
+        <a href="/delete-link/<%=url.shortUrl%>" class="col col-0"><span style="font-size: 1.6rem; font-weight: 600;">✖</span ></a>
+      </div>
+    </li>
+      <%}%>
+
+      </ul> 
+    </div>
+    <% } %>
