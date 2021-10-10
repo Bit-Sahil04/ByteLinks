@@ -19,6 +19,6 @@ app.listen(port);
 
 
 mongoose.connect( mongodbURI )
-.then(() => console.log("connection to mongodb cluster established"))
+.then(() => console.log("connection to mongodb cluster established", `Running on port: ${port}`))
 .then(() => app.use(middlewares))
 .catch( (err) => console.log(err));
