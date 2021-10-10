@@ -7,7 +7,7 @@ const middlewares = require('./middlewares/index')
 
 const app = express();
 const mongodbURI = process.env.MONGODB_URI;
-
+const port = process.env.PORT || 3000;
 
 
 app.set('view engine','ejs');
@@ -15,7 +15,7 @@ app.set('views', 'views');
 
 
 
-app.listen(3000);
+app.listen(port);
 
 
 mongoose.connect( mongodbURI )
