@@ -7,6 +7,8 @@ NodeJs, Express, MongoDb
 
 ##### Usage:
 ```bash
+git clone https://github.com/Bit-Sahil04/ByteLinks.git
+cd bytelinks
 npm install
 npm start
 ```
@@ -25,6 +27,7 @@ npm start
 - [ ] publicly shortened urls are visible on homepage /
 - [ ] privately shortened urls are visible on /u/:user
 - [ ] Link usage tracking
--	[ ] 404 page
+- [ ] 404 page
 - [x] Navbar 
 - [ ] Pop-up bubbles for information/errors
+- [ ] Pagination for URL table
