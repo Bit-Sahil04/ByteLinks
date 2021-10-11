@@ -16,7 +16,7 @@
         <li>
           <div class="row">
             <span class="col col-3"><%= url.date.toString().split("2021")[0]  %> </span>
-            <span class="col col-1"> <a href="<%=url.url%>"> <%= url.url.split("https://")[1].substring(0, 40) + ( url.url.length > 39 ? "...":"") %> </a></span>
+            <span class="col col-1"> <a href="<%=url.url%>"> <%= url.url.substring(0, 40) + ( url.url.length > 39 ? "...":"") %> </a></span>
         <span class="col col-2"> <a href="<%=url.url%>"> <%= url.shortUrl %> </a></span>
         <a href="/delete-link/<%=url.shortUrl%>" class="col col-0"><span style="font-size: 1.6rem; font-weight: 600;">✖</span ></a>
       </div>
