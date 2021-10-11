@@ -61,8 +61,8 @@ header{
 
 /* Change background on mouse-over */
 .navbar a:hover {
-  background: #dd4b46ff ;
-  color: #ddd;
+  color: #dd4b46ff ;
+  /*color: #ddd;*/
 }
 
 #logout{
@@ -120,7 +120,7 @@ https://www.sanwebe.com/2014/08/css-html-forms-designs
 	height: 15px;
 	padding: 2px 5px 2px 5px;
 	color: #B9B9B9;
-	font-size: 14px;
+	font-size: 13px;
 	overflow: hidden;
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -187,12 +187,14 @@ https://www.sanwebe.com/2014/08/css-html-forms-designs
   list-style-type: none;
 }
 .row {
-  border: 0px 1px 1px 1px solid black;
+  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-width: 0px 0px 1px 0px;
   border-radius: 2px;
   padding: 5px;
   width: 100%;
   min-height: 30%;
-
+  
   display: flex;
   margin: 0% 0% 0% 0%;
 
@@ -210,6 +212,7 @@ https://www.sanwebe.com/2014/08/css-html-forms-designs
 .row:hover {
   box-shadow: 2px 2px 3px gray;
   background-color: rgb(182, 181, 181);
+  background-color: rgba(182, 181, 181, 0.3);
 }
 .col a {
   color: black;
@@ -221,7 +224,7 @@ https://www.sanwebe.com/2014/08/css-html-forms-designs
   color: black;
   margin: auto;
   /*   padding: auto; */
-  /* border: 0px 1px 0px 0px solid blue; */
+  /*border: 0px 2px solid blue;*/
   text-align: center;
   /* background-color: transparent; */
 }
@@ -237,9 +240,11 @@ https://www.sanwebe.com/2014/08/css-html-forms-designs
   /* outline: auto; */
   text-decoration-line: none;
   /*   min-width: 2%; */
+  
 }
 .col-1 {
   width: 50%;
+  text-align: left;
   /* outline: auto; */
   /*   min-width: 25%; */
 }
@@ -252,6 +257,7 @@ https://www.sanwebe.com/2014/08/css-html-forms-designs
   width: 10%;
   /* outline: auto; */
   /*   min-width: 2%; */
+  display: none;
 }
 .col-4 {
   width: 7%;

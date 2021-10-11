@@ -31,3 +31,5 @@ npm start
 - [x] Navbar 
 - [ ] Pop-up bubbles for information/errors
 - [ ] Pagination for URL table
+- [ ] Add Tests
+- [ ] Responsiveness! 

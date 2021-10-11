@@ -1,4 +1,5 @@
 .env
 desktop.ini
+*.swp
+
 node_modules/
-procfile

@@ -16,6 +16,7 @@ exports.getIndex = (req, res, next) => {
 
 exports.postUrl = (req, res, next) => {
   const userUrl = req.body.userUrl;
+  console.log(req.body);
   let subUrl = randString.randString(6);
 
   // validating user submitted URLs
