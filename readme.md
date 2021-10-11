@@ -22,8 +22,11 @@ npm start
 - [x] allow anyone to delete URLs (for the sake of fulfilling MVP features)
 - [x] validate url (check and allow if not exist in db)
 - [x] ~~Entry deletion~~ (disabled for now)
-- [ ] Error handling / reporting
-- [ ] Signup page /login /register (WIP)
+- [ ] Error handling / reporting (WIP)
+- [x] Signup page /login /register (WIP)
+- [x] login / registration
+- [ ] session / csrf handling 
+- [ ] manage user/links associations
 - [ ] have public and private views (Dashboard page)/u/:user
 - [ ] publicly shortened urls are visible on homepage /
 - [ ] privately shortened urls are visible on /u/:user

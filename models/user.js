@@ -1,15 +1,14 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// userId
+// userId (default)
 // links
 // username
 // password 
 const userSchema = new Schema({
-  url: { type: String, required: true , index: {unique: true}},
-  shortUrl: { type: String, required: true },
-  date: { type: Date, default: Date.now },
-  userId: { type: Schema.Types.ObjectId }, //TODO: set required: true
+  username: { type: String, required: true , unique: true},
+  password: { type: String, required: true },
+  links: { type: Array }, // todo create references/associations with submitted links
 });
 
 module.exports = mongoose.model("User", userSchema);

@@ -39,6 +39,7 @@ body {
   text-align: center;
   background: #d40;
   color: #fff;
+  cursor: pointer;
 }
 /* ------------------------- NAVBAR ----------------------------- */
 /* Taken from https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
@@ -49,7 +50,7 @@ header{
 
 .navbar {
   overflow: hidden;
-  background-color: #333;
+  background-color: rgb(71, 66, 67);
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
@@ -206,13 +207,14 @@ https://www.sanwebe.com/2014/08/css-html-forms-designs
   margin: 0% 0% 0% 0%;
 
   font-size: 1.2em;
+  transition: background-color 0.5s;
 }
 /* 
 .my-table li:nth-child(even) {
   background-color: #dfdddd;
 } */
 
-.col-0:hover {
+.col a:hover{
   color: rgb(255, 60, 50);
 }
 
@@ -220,10 +222,12 @@ https://www.sanwebe.com/2014/08/css-html-forms-designs
   box-shadow: 2px 2px 3px gray;
   background-color: rgb(182, 181, 181);
   background-color: rgba(182, 181, 181, 0.3);
+  color: #dd4b46ff;
 }
 .col a {
-  color: black;
+  color: rgb(71, 66, 67);
   text-decoration-line: none;
+  transition: color 1s ease-out;
   /* background-color: transparent; */
 }
 .col {

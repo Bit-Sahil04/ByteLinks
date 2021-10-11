@@ -9,7 +9,9 @@ router.get('/signon' , authController.getLogin);
 
 // todo: validation Reeeeeee
 
-router.post('/signon', authController.postCredentials);
+router.post('/login', authController.postLogin);
+
+router.post('/register', authController.postRegister);
 
 
 module.exports = router;
