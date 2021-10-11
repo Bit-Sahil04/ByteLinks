@@ -1,7 +1,6 @@
 const Url = require("../models/url");
 const randString = require("../utils/randString");
-const { validationResult } = require('express-validator');
-
+const { validationResult } = require("express-validator");
 
 exports.getIndex = (req, res, next) => {
   // fetch all URLS from DB and render to the table
@@ -21,7 +20,7 @@ exports.postUrl = (req, res, next) => {
 
   // validating user submitted URLs
   const errors = validationResult(req);
-  if (!errors.isEmpty()){
+  if (!errors.isEmpty()) {
     console.log(errors.array());
     return res.status(422).redirect("/"); //TODO: inform user about failed URL validation
   }
@@ -32,17 +31,11 @@ exports.postUrl = (req, res, next) => {
       // check for random string collision with db
       // keep generating a new random string until collision is resolved
       if (url) {
-        Url.find()
-          .then((urls) => {
-          flag = false;
-          while (!flag) {
+        Url.find().then((urls) => {
+          let flag = 0;
+          while (flag != undefined) {
             subUrl = randString.randString(6);
-            for (url of urls) {
-              if (url.shortUrl == subUrl) {
-                continue;
-              }
-              flag = true;
-            }
+            flag = urls.find((u) => u.shortUrl === subUrl);
           }
         });
       }
@@ -68,7 +61,7 @@ exports.redirect = (req, res, next) => {
       if (url) {
         console.log(url);
         res.status(301).redirect(url.url);
-      } else {  
+      } else {
         console.log(`requested url not found ${url}`);
         res.redirect("/"); // TODO: redirect to a 404 page
       }
@@ -84,7 +77,6 @@ exports.deleteUrl = (req, res, next) => {
 
   // Temporary pass-through till I setup auth checks
   return res.redirect("/");
-
 
   Url.deleteOne({ shortUrl: subUrl })
     .then(() => res.redirect("/"))
