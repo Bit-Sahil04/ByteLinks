@@ -33,6 +33,13 @@ body {
   color: #dd4b46ff ;
   padding-right: -5px;
 }
+.err-msg{
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  background: #d40;
+  color: #fff;
+}
 /* ------------------------- NAVBAR ----------------------------- */
 /* Taken from https://www.w3schools.com/howto/howto_css_fixed_menu.asp */
 
