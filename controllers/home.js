@@ -1,10 +1,10 @@
-const Url = require("../models/url");
+const Urldb = require("../models/url");
 const randString = require("../utils/randString");
 const { validationResult } = require("express-validator");
 
 exports.getIndex = (req, res, next) => {
   // fetch all URLS from DB and render to the table
-  Url.find()
+  Urldb.find()
     .then((urls) => {
       return res.status(200).render("index", {
         urls: urls.reverse(),
@@ -26,12 +26,12 @@ exports.postUrl = (req, res, next) => {
   }
 
   console.log(userUrl, "->", subUrl);
-  Url.find({ shortUrl: subUrl })
+  Urldb.find({ shortUrl: subUrl })
     .then((url) => {
       // check for random string collision with db
       // keep generating a new random string until collision is resolved
       if (url) {
-        Url.find().then((urls) => {
+        Urldb.find().then((urls) => {
           let flag = 0;
           while (flag != undefined) {
             subUrl = randString.randString(6);
@@ -39,7 +39,7 @@ exports.postUrl = (req, res, next) => {
           }
         });
       }
-      const newUrl = new Url({ url: userUrl, shortUrl: subUrl });
+      const newUrl = new Urldb({ url: userUrl, shortUrl: subUrl });
       return newUrl.save();
     })
     .then(() => res.redirect("/"))
@@ -56,7 +56,7 @@ exports.redirect = (req, res, next) => {
   if (!req.params.shortUrl || shortUrl === "favicon.ico") {
     return next();
   }
-  Url.findOne({ shortUrl: shortUrl })
+  Urldb.findOne({ shortUrl: shortUrl })
     .then((url) => {
       if (url) {
         console.log(url);
@@ -78,7 +78,7 @@ exports.deleteUrl = (req, res, next) => {
   // Temporary pass-through till I setup auth checks
   return res.redirect("/");
 
-  Url.deleteOne({ shortUrl: subUrl })
+  Urldb.deleteOne({ shortUrl: subUrl })
     .then(() => res.redirect("/"))
     .catch((e) => console.log(e));
 };

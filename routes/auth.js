@@ -5,7 +5,7 @@ const authController = require('../controllers/auth');
 const { check } = require('express-validator');
 
 router.get('/signon' , authController.getLogin);
-// router.get('/logout' , authController.getLogin);
+router.get('/logout' , authController.getLogout);
 
 // todo: validation Reeeeeee
 
