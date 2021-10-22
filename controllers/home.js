@@ -4,6 +4,11 @@ const { validationResult } = require("express-validator");
 
 exports.getIndex = (req, res, next) => {
   // fetch all URLS from DB and render to the table
+  // res.locals.alert = {
+  //   msg: "testing 123",
+  //   type: res.alertType.error,
+  // };
+  // console.log(req.session.user);
   Urldb.find()
     .then((urls) => {
       return res.status(200).render("index", {
@@ -26,6 +31,7 @@ exports.postUrl = (req, res, next) => {
   }
 
   console.log(userUrl, "->", subUrl);
+  console.log(req.session.user);
   Urldb.find({ shortUrl: subUrl })
     .then((url) => {
       // check for random string collision with db
@@ -39,8 +45,21 @@ exports.postUrl = (req, res, next) => {
           }
         });
       }
-      const newUrl = new Urldb({ url: userUrl, shortUrl: subUrl });
-      return newUrl.save();
+      let newUrl;
+      if (req.session.user) {
+        newUrl = new Urldb({
+          url: userUrl,
+          shortUrl: subUrl,
+          userId: req.session.userId,
+        });
+        req.session.user.links.push(newUrl);
+      } else {
+        newUrl = new Urldb({ url: userUrl, shortUrl: subUrl });
+      }
+      return newUrl
+        .save()
+        .then(() => console.log(typeof req.session.user))
+        .then(() => req.session.save());
     })
     .then(() => res.redirect("/"))
     .catch((err) => {
@@ -75,10 +94,17 @@ exports.redirect = (req, res, next) => {
 exports.deleteUrl = (req, res, next) => {
   const subUrl = req.params.shortUrl;
 
-  // Temporary pass-through till I setup auth checks
-  return res.redirect("/");
+  if (
+    req.session.user &&
+    (req.session.user._isAdmin ||
+      req.session.user.links.find((e) => e === subUrl))
+  ) {
+    Urldb.deleteOne({ shortUrl: subUrl })
+      .then(() => res.redirect("/"))
+      .catch((e) => console.log(e));
+  }
+  else{
 
-  Urldb.deleteOne({ shortUrl: subUrl })
-    .then(() => res.redirect("/"))
-    .catch((e) => console.log(e));
+    return res.redirect("/");
+  }
 };

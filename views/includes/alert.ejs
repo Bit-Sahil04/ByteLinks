@@ -1,0 +1,6 @@
+<% if (alert) {%>
+<div class="alert" style='background-color:#<%=alert.type%>;' onclick="this.style.display='none';">
+  <! -- Linter marks as error but works either way -->
+    <%=alert.msg%>
+</div>
+<%}%>

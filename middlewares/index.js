@@ -15,6 +15,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.use(express.static(path.join(__dirname + "/" + "../public")));
 router.use(session({secret: process.env.SESSION_SECRET, saveUninitialized: false, resave: false}))
 
+
 router.use(localsConfig.setupLocals);
 router.use(authRouter);
 router.use(dashboardRouter);

@@ -1,6 +1,7 @@
 # ByteLinks: URL Shortener
 
 ### Visit the Live Demo [Here](https://bytelinks.herokuapp.com/)
+
 ##### Tech Stack:
 ```js
 NodeJs, Express, MongoDb
@@ -25,7 +26,8 @@ npm start
 - [ ] Error handling / reporting (WIP)
 - [x] Signup page /login /register (WIP)
 - [x] login / registration
-- [ ] session / csrf handling 
+- [x] session 
+- [ ] csrf handling 
 - [ ] manage user/links associations
 - [ ] have public and private views (Dashboard page)/u/:user
 - [ ] publicly shortened urls are visible on homepage /
